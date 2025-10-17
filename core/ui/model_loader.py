@@ -17,27 +17,27 @@ class ModelLoader:
         self.properties_sidebar = editor_app.properties_sidebar
         self.file_group = self.editor_app.file_group
 
-        self.import_btn = ActionButton(text='Importer')
+        self.import_btn = ActionButton(text='Import')
         self.file_group.add_widget(self.import_btn)
 
     def connect_events(self):
         self.import_btn.bind(on_release=self.open_file_chooser)
         
 
-    # ---------------- File chooser ----------------
+    # File chooser 
     def open_file_chooser(self, instance):
         box = BoxLayout(orientation='vertical')
         chooser = FileChooserListView(filters=["*.egg", "*.bam", "*.gltf", "*.glb", "*.pz"])
         box.add_widget(chooser)
 
         btn_box = BoxLayout(size_hint_y=None, height=40)
-        select_btn = Button(text="Charger", background_color=(0.2, 0.5, 0.3, 1))
-        cancel_btn = Button(text="Annuler", background_color=(0.3, 0.3, 0.3, 1))
+        select_btn = Button(text="import", background_color=(0.2, 0.5, 0.3, 1))
+        cancel_btn = Button(text="cancel", background_color=(0.3, 0.3, 0.3, 1))
         btn_box.add_widget(select_btn)
         btn_box.add_widget(cancel_btn)
         box.add_widget(btn_box)
 
-        popup = Popup(title="Choisir un modèle", content=box, size_hint=(0.9, 0.9))
+        popup = Popup(title="Choose a model", content=box, size_hint=(0.9, 0.9))
         popup.open()
 
         def load_model(*args):
@@ -47,7 +47,7 @@ class ModelLoader:
                 try:
                     model = self.panda.loader.loadModel(panda_path)
 
-                    # 🌳 Crée un conteneur racine nommé d'après le fichier
+                    # Crée un conteneur racine nommé d'après le fichier
                     container_name = path.stem
                     container = NodePath(container_name)
                     container.reparentTo(self.panda.render)
@@ -64,7 +64,7 @@ class ModelLoader:
                         i += 1
                     container.set_name(name)
 
-                    # ➕ Enregistre le conteneur dans self.models
+                    # Enregistre le conteneur dans self.models
                     self.models[name] = {
                         "path": str(path),
                         "file": {
@@ -92,4 +92,5 @@ class ModelLoader:
                     print(f"[ERREUR] Impossible de charger {path}: {e}")
 
         select_btn.bind(on_release=load_model)
+
         cancel_btn.bind(on_release=lambda *_: popup.dismiss())
