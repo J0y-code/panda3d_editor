@@ -24,7 +24,7 @@ class HierarchySidebar(BoxLayout):
 
         # Titre
         self.add_widget(Label(
-            text="[b]Hiérarchie[/b]",
+            text="[b]Hierarchy[/b]",
             markup=True,
             size_hint_y=None,
             height=36,
@@ -73,3 +73,4 @@ class HierarchySidebar(BoxLayout):
             # Mettre à jour la sidebar propriétés
             if self.selected_node:
                 self.panda_app.properties_sidebar.set_node(self.selected_node)
+
