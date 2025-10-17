@@ -43,7 +43,7 @@ class ProjectHierarchySidebar(BoxLayout):
 
         # Titre
         self.add_widget(Label(
-            text="[b]Projet[/b]",
+            text="[b]Project[/b]",
             markup=True,
             size_hint_y=None,
             height=36,
@@ -97,3 +97,4 @@ class ProjectHierarchySidebar(BoxLayout):
                     self._add_node(child, parent=node)
             except PermissionError:
                 pass
+
