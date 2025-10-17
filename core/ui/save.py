@@ -15,10 +15,10 @@ class Save:
         self.file_group = self.editor_app.file_group
 
         # Autres options classiques
-        self.save_btn = ActionButton(text='Enregistrer')
+        self.save_btn = ActionButton(text='Save')
         self.file_group.add_widget(self.save_btn)
 
-        self.save_as_btn = ActionButton(text='Enregistrer sous')
+        self.save_as_btn = ActionButton(text='Save as')
         self.file_group.add_widget(self.save_as_btn)
 
     def connect_events(self):
@@ -39,13 +39,13 @@ class Save:
         box.add_widget(chooser)
 
         btn_box = BoxLayout(size_hint_y=None, height=40)
-        save_btn = Button(text="Enregistrer", background_color=(0.2, 0.5, 0.3, 1))
-        cancel_btn = Button(text="Annuler", background_color=(0.3, 0.3, 0.3, 1))
+        save_btn = Button(text="save", background_color=(0.2, 0.5, 0.3, 1))
+        cancel_btn = Button(text="cancel", background_color=(0.3, 0.3, 0.3, 1))
         btn_box.add_widget(save_btn)
         btn_box.add_widget(cancel_btn)
         box.add_widget(btn_box)
 
-        popup = Popup(title="Enregistrer la scène", content=box, size_hint=(0.9, 0.9))
+        popup = Popup(title="Save", content=box, size_hint=(0.9, 0.9))
         popup.open()
 
         def do_save(*args):
@@ -125,3 +125,4 @@ class Save:
             json.dump(scene_data, f, indent=2, ensure_ascii=False)
 
         print(f"[SUCCÈS] Scène sauvegardée avec les fichiers et collections : {path}")
+
