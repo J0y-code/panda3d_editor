@@ -32,7 +32,7 @@ class PropertiesSidebar(BoxLayout):
         self.add_widget(scroll)
 
         # Titre
-        content.add_widget(Label(text="[b]Propriétés[/b]", markup=True, size_hint_y=None, height=30, color=(1,1,1,1)))
+        content.add_widget(Label(text="[b]Properties[/b]", markup=True, size_hint_y=None, height=30, color=(1,1,1,1)))
 
         # --- Position en tableau ---
         self.pos_inputs = {}
@@ -150,3 +150,4 @@ class PropertiesSidebar(BoxLayout):
             self.models[name]["scale"] = list(model.get_scale())
             # Debug
             print(f"[SYNC] {name} mis à jour -> pos={self.models[name]['pos']}")
+
