@@ -60,9 +60,7 @@ class EditorUI(App):
         help_group.add_widget(ActionButton(text='À propos'))
         action_view.add_widget(help_group)
 
-        # =====================================================
-        # 2️⃣  TOOLBAR (barre d’outils grise)
-        # =====================================================
+        # TOOLBAR (barre d’outils grise)
         toolbar = BoxLayout(
             orientation='horizontal',
             size_hint_y=None,
@@ -110,9 +108,7 @@ class EditorUI(App):
 
         root.add_widget(toolbar)
 
-        # =====================================================
-        # 3️⃣  ZONE PRINCIPALE (main area)
-        # =====================================================
+        # ZONE PRINCIPALE (main area)
         main_area = BoxLayout(orientation='horizontal', spacing=0, padding=0)
 
         # --- Barre de gauche : arborescence du projet
@@ -120,7 +116,7 @@ class EditorUI(App):
         self.project_hierarchic_sidebar = ProjectHierarchySidebar(
             panda_app=self.panda,
             ui_app=self,
-            project_root=str('test')
+            project_root=str('default')
         )
         main_area.add_widget(self.project_hierarchic_sidebar)
 
