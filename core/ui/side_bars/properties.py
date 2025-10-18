@@ -89,7 +89,7 @@ class PropertiesSidebar(BoxLayout):
         self.rect.pos = self.pos
         self.rect.size = self.size
 
-    def set_node(self, node: NodePath | None):
+    def set_node(self, node: NodePath) -> None:
         """Met à jour les champs de transformation selon le node sélectionné."""
         self.selected_node = node
 
@@ -150,4 +150,5 @@ class PropertiesSidebar(BoxLayout):
             self.models[name]["scale"] = list(model.get_scale())
             # Debug
             print(f"[SYNC] {name} mis à jour -> pos={self.models[name]['pos']}")
+
 
