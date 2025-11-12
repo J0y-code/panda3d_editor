@@ -1,0 +1,22 @@
+{  
+    "first_time": true,
+    "move_controls": {
+        "front": "w",
+        "back": "s",
+        "left": "a",
+        "right": "d",
+        "up": "q",
+        "down": "e"
+    },
+    "shortcuts": {
+        "new": "Ctrl+N",
+        "open": "Ctrl+O",
+        "save": "Ctrl+S",
+        "save_as": "Ctrl+Shift+S",
+        "export": "Ctrl+E",
+        "import": "Ctrl+I",
+        "undo": "Ctrl+Z",
+        "redo": "Ctrl+Z+Shift"
+    }
+
+}
